@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>&#1046;&#1077;&#1082;&#1077; &#1087;&#1072;&#1088;&#1072;&#1179;&#1096;&#1072;</title>
+<style>
+
+  body
+  {
+    cursor: url('flag.png'), auto;
+  }
+   .parallax
+{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+.background-space
+{
+   background: url(1221.png);
+   
+   z-index: 1;
+}
+
+.background-tree
+{
+   background: url(plane.png) no-repeat;
+   background-size: 5%, 5%;
+   z-index: 2;
+   filter: blur(1px);
+}
+</style>
+</head>
+
+<body>
+  <h1 align="center" class="style1">&nbsp;</h1>
+
+  <div class="parallax background-space" id="background-space"></div>
+  <div class="parallax background-tree" id="background-tree"></div>
+
+  <script>
+
+    
+    const bgTree = document.getElementById("background-tree");
+     
+    
+    document.addEventListener("mousemove", function (e) { MoveBackground(e); });
+     
+    function MoveBackground(e)
+    {
+       
+       let offsetX = (e.clientX / window.innerWidth * 1300) ;
+       let offsetY = (e.clientY / window.innerHeight * 10);
+     
+       bgTree.setAttribute("style", "background-position: " + offsetX + "px " + offsetY +"px;");
+    }
+    
+        </script>
+
+</body>
+
+</html>
